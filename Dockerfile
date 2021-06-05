@@ -17,5 +17,6 @@ RUN git clone https://github.com/LoopPerfect/buckaroo.git /tmp/buckaroo --depth 
     && dotnet publish buckaroo-cli -r linux-x64 \
     && cd - \
     && rm -rf /tmp/buckaroo
-    
+
 RUN dotnet nuget disable source nuget.org
+RUN dotnet nuget add source /home/buckaroo/.nuget/packages
